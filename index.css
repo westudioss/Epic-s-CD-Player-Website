@@ -1,0 +1,464 @@
+@font-face {
+  font-family: bremlin;
+  src: url(Bremlin.otf);
+}
+
+@font-face {
+  font-family: rollingstar;
+  src: url(TheRollingstarOTF.otf);
+}
+
+@font-face {
+  font-family: barcade;
+  src: url(Barcade-R4LM.ttf);
+}
+
+@font-face {
+  font-family: retrochips;
+  src: url(Retrochips-Rp01o.ttf);
+}
+
+@font-face {
+  font-family: creditvalley;
+  src: url(CreditValley.otf);
+}
+
+body {
+    margin: 0px;
+
+    position: relative;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    background: url(imgs/synthbackground2.jpg) center/cover;
+
+    filter:
+        blur(10px)
+        brightness(45%)
+        saturate(70%);
+    transform: scale(1.05);
+
+    z-index: -2;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+}
+
+#title {
+    text-align: center;
+    font-family: retrochips;
+    font-size: 80px;
+    width: fit-content;
+    left: 26%;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: white;
+    background-color: black;
+    color: rgb(255, 255, 0);
+    padding: 15px;
+}
+
+#title2 {
+    text-align: center;
+    font-family: retrochips;
+    font-size: 80px;
+    width: fit-content;
+    left: 35.3%;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: white;
+    background-color: black;
+    color: rgb(255, 255, 0);
+    padding: 15px;
+}
+
+#title3 {
+    text-align: center;
+    font-family: retrochips;
+    font-size: 80px;
+    width: fit-content;
+    left: 36%;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: white;
+    background-color: black;
+    color: rgb(255, 255, 0);
+    padding: 15px;
+    margin-top: 150px;
+}
+
+.wavy {
+    animation-name: wavy;
+    animation-duration: 1.3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+@keyframes wavy {
+    0% {
+        top: 0px;
+    }
+    50% {
+        top: -15px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+main {
+    width: 100%;
+    text-align: center;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 1140px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url(./imgs/retrobackgroundnew.png);
+    background-size: cover;
+    background-position: center;
+
+    clip-path: inset(0 0 100% 0);
+
+    animation: revealBg 5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
+    z-index: 0;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes revealBg {
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.hero2 {
+    position: relative;
+    width: 100%;
+    height: 3000px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.hero2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url(./imgs/retrobackground2new.png);
+    background-size: 100% 100%;
+    background-position: center;
+
+    clip-path: inset(0 0 100% 0);
+
+    transition: clip-path 5s cubic-bezier(0.22, 1, 0.36, 1);
+
+    z-index: 0;
+}
+
+.hero2 > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hero2.visible::before {
+    clip-path: inset(0 0 0 0);
+}
+
+.title {
+    font-family: rollingstar;
+    font-size: 175px;
+    top: 50px;
+    margin-bottom: -50px;
+
+    text-shadow:
+        4px 4px 0 #FFF,
+        -4px 4px 0 #FFF,
+        4px -4px 0 #FFF,
+        -4px -4px 0 #FFF;
+
+    animation: revealText 5s;
+}
+
+@keyframes revealText {
+    from {
+        opacity: 0%;
+    } to {
+        opacity: 100%;
+    }
+}
+
+.subtitle {
+    font-family: barcade;
+    font-size: 100px;
+
+
+    text-shadow:
+        4px 4px 0 #FFF,
+        -4px 4px 0 #FFF,
+        4px -4px 0 #FFF,
+        -4px -4px 0 #FFF;
+    
+    animation: revealSubtext 7s;
+}
+
+@keyframes revealSubtext {
+    from {
+        opacity: 0%;
+    } to {
+        opacity: 100%;
+    }
+}
+
+.CDbg::before {
+    content: "";
+    position: absolute;
+    inset: -250px;
+
+    background-image: url(imgs/cd.png);
+    background-size: auto;
+    background-position: center;
+    width: 50%;
+    left: 25%;
+
+    animation: rotateCD 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotateCD {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.collection {
+    width: 100%;
+    height: 700px;
+}
+
+.cds {
+    display: grid;
+    grid-column-gap: 225px;
+    grid-row-gap: 150px;
+    justify-content: center;
+    align-content: center;
+    margin-top: 32px;
+    grid-template-columns: auto auto;
+    float: none;
+}
+
+.cditem {
+    border-radius: 16px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(0, 0, 0);
+    width: 384px;
+    height: 550px;
+    background-image: url(imgs/cdbackground.webp);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.cditem h1 {
+    color: rgb(255, 255, 255);
+    font-family: creditvalley;
+    letter-spacing: 4px;
+    margin: 0px;
+    margin-left: 8px;
+    font-size: 40px;
+}
+
+.cditem p {
+    color: rgb(255, 255, 255);
+    font-family: "Source Code Pro", sans-serif;
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.cdimage {
+    width: inherit;
+    height: 375px;
+    border-radius: 16px;
+    border-bottom-style: solid;
+    border-color: rgb(0, 0, 0);
+}
+
+button {
+    width: 300px;
+    height: 75px;
+    background-color: lime;
+    font-size: 35px;
+    border-style: solid;
+    border-width: 4px;
+    font-family: creditvalley;
+}
+
+#confirmButton {
+    width: 300px;
+    height: 75px;
+    background-color: lime;
+    font-size: 35px;
+    border-style: solid;
+    border-width: 4px;
+    font-family: creditvalley;
+}
+
+button:hover {
+    border-color: white;
+}
+
+.container {
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.container label {
+    color: white;
+    font-size: 20px;
+}
+
+.container input {
+    margin: 10px;
+    width: 500px;
+    height: 50px;
+    font-size: 30px;
+}
+
+.container textarea {
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 500px;
+    height: 100px;
+    font-size: 20px;
+}
+
+#subbutton {
+    width: 100px;
+    margin-left: 40%;
+    font-size: 20px;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    background: black;
+    color: white;
+    font-size: 20px;
+}
+
+a {
+    color: cyan;
+}
+
+.ticker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+
+    background: #000;
+    color: white;
+
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.ticker-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 80s linear infinite;
+}
+
+.ticker-track pre {
+    white-space: nowrap;
+    padding-right: 80px;
+    font-size: 27px;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.orbit {
+    position: absolute;
+    left: 46%;
+    top: 250px;
+    width: 0;
+    height: 0;
+
+    animation: orbit 16s linear infinite;
+}
+
+.counter {
+    transform: translateX(550px); /* Orbit radius */
+    animation: counterOrbit 16s linear infinite;
+}
+
+.cat {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: url("imgs/cat1.jpg") center/cover no-repeat;
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes counterOrbit {
+    from {
+        transform: translateX(550px) rotate(0deg);
+    }
+    to {
+        transform: translateX(550px) rotate(-360deg);
+    }
+}
