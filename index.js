@@ -174,7 +174,7 @@ calc.addEventListener("submit", function(e) {
 
     var outdiv = document.getElementById("outputButton");
     outdiv.innerHTML = `
-        <button id='confirmButton' type='button' style='width: auto;'>Let's buy ${output} CD${(output == 1) ? "" : "s"} for $${4*output}!</button>
+        <button id='confirmButton' type='button' style='width: auto;'>Let's buy ${output} CD${(output == 1) ? "" : "s"} for $${5*output}!</button>
     `;
 
     var outButton = document.getElementById("confirmButton");
@@ -184,7 +184,7 @@ calc.addEventListener("submit", function(e) {
         var msg = document.getElementById("message");
         var nme = document.getElementById("title2");
 
-        msg.value = `Hello, I would like to burn ${val} minutes of audio onto ${output} CD${(output == 1) ? "" : "s"} for $${4*output}.`
+        msg.value = `Hello, I would like to burn ${val} minutes of audio onto ${output} CD${(output == 1) ? "" : "s"} for $${5*output}.`
 
         nme.scrollIntoView({behavior: "smooth"});
 
